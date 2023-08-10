@@ -1,0 +1,27 @@
+version: '3.9'
+services:
+  backends:
+    image: xyzassessment/backend-services
+    hostname: backends
+    container_name: backends
+    ports:
+      - "8080:8080"
+  rabbitmq:
+    image: rabbitmq:3.12.2-management
+    hostname: rabbitmq
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  enumahin-tnt-aggregation-service:
+    image: enumahin/aggregation-service-enumahinm:0.0.1-SNAPSHOT
+    hostname: enumahintnt
+    container_name: enumahintnt
+    ports:
+      - "8081:8081"
+    depends_on:
+      - backends
+      - rabbitmq
+    environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SERVICES_BASEURL: "http://backends:8080/"
