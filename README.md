@@ -8,10 +8,10 @@
 https://github.com/enumahin/aggregation-service/blob/main/docker-compose.yml
 
 #3. Then open the terminal/command prompt, navigate to the folder where you saved the downloaded file, and run the below command for mac
-docker-compose docker-compose.yml up
+docker-compose -f docker-compose.yml up
 
 #3. Run this for Linux
-docker compose docker-compose.yml up
+docker compose -f docker-compose.yml up
 
 # Note that number 3 depends on how docker compose is installed on your computer
 
