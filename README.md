@@ -2,13 +2,18 @@
 
 # Instruction on how to run the aggregation service
 
-#1. Make sure that you have docker installed on your computer and docker-compose path is in your environment/path variable
+#1. Make sure that you have docker and docker compose installed on your computer and docker-compose path is in your environment/path variable
 
 #2. download the docker-compose.yml file from the link below
 https://github.com/enumahin/aggregation-service/blob/main/docker-compose.yml
 
-#3. Then open the terminal/command prompt, navigate to the folder where you saved the downloaded file, and run the below command
+#3. Then open the terminal/command prompt, navigate to the folder where you saved the downloaded file, and run the below command for mac
 docker-compose docker-compose.yml up
+
+#3. Run this for Linux
+docker compose docker-compose.yml up
+
+# Note that number 3 depends on how docker compose is installed on your computer
 
 #4 Check to be sure that the aggregation service and its two dependency services(backends service and rabbitmq service) are running. 
 
